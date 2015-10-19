@@ -1,0 +1,139 @@
+Feature: A user wants to edit a draft version of a wrap.
+
+  Scenario: Edit a draft of an existing wrap wrap and add images by dragging and dropping
+
+    Given edit a draft of an existing wrap
+    When a user navigate to My Wraps page to edit a wrap
+    And verify that user lands on user’s ‘My Wraps' page
+    Then a user select a draft version of a wrap
+    And verify that a menu slides at the bottom
+    Then a user clicks Edit button
+    And verify that Image component is already added by default in component section
+    When a user clicks Add Images button
+    Then verify a dialog window Add Images appears
+    Then a users drags an image (jpg, gif to png formats) to the window
+    And verify the image is added to a images sections
+    Then a user clicks Add button
+    And verify that a new images is added to Image Component section
+    Then a user selects a newly uploaded image
+    And verify that the image is shown in preview section
+    Then a user clicks Save button
+    And verify that screen has greyed out
+    And verify that a user can’t make any changes while a wrap is being saved
+    Then click Publish button
+    And verify Publish Successful dialog window appears
+    And verify it has title, subtitle, image, and buttons
+    Then a user clicks Share Wrap
+    Then verify Share Wrap dialog window appears
+    Then a users clicks Facebook
+    And verify a new browser window opens up
+    Then a user clicks Share
+    And verify that a browser window has closed
+    Then close the Share Wrap window
+    And verify that a user is back to configurations page
+    Then a user clicks Close
+    Then verify Published wrap appeared among all other user's wraps
+    Then navigate FB site and check a user’s wrap in user's feeds.
+
+
+  Scenario: Edit a draft of an existing wrap wrap and add images by browsing locally
+
+    Given edit a draft of an existing wrap
+    When a user navigate to My Wraps page to edit a wrap
+    Then a user select a draft version of a wrap
+    And a user clicks on Edit button
+    When a user clicks Add Images button
+    Then a users browses and uploads an image
+    And verify the image is added to images pool for this wrap
+    Then a user clicks Add button
+    And verify that a new images is added to Image Component section
+    Then a user selects an image
+    Then a user clicks Save button
+    Then click Publish button
+    Then close Publish Successful dialog window
+    Then click Share Wrap from the header nav menu
+    Then verify Share Wrap dialog window appears
+    Then a users clicks Facebook Share button
+    Then close the Share Wrap window
+    Then a user clicks Close button
+    Then verify Published wrap appeared among all other my wraps
+
+
+  Scenario: Edit a draft of an existing wrap wrap and add images by choosing from All images tab
+    Given edit a draft of an existing wrap
+    When a user navigate to My Wraps page to edit a wrap
+    Then a user select a draft version of a wrap
+    And a user clicks on Edit button
+    When a user clicks Add Images button
+    Then a user clicks All Images in Add images section
+    Then a user selects an image
+    Then a user clicks Add button
+    And verify that a new image is added to Image Component section
+    Then click Save button
+    Then click Publish button
+    Then click Close
+    Then navigate newly edited wrap
+    And click Share button
+    Then verify Share Wrap dialog window appears
+    Then a users clicks Facebook Share button
+    Then close the Share Wrap window
+    Then click Share to share a post on FB
+    Then click Close to close Share Wrap window
+
+  Scenario: Edit a draft of an existing wrap wrap when a user offered to take Quick Tour
+
+    Given edit a draft of an existing wrap wrap and add images
+    When a user navigate to My Wraps page to edit a wrap
+    Then Quick Tour wizard is appeared
+    Then a user goes through each screen by click Next button
+    And verify that respective screen is shown
+    And after user reached the end he click on X
+    And verify that Quick Tour help wizard is gone
+    And verify that user is back on a page where a wrap is configured
+    And verify that user lands on user’s ‘My Wraps' page
+    Then a user select a wrap
+    And clicks on Edit button
+    When a user clicks Add Images button
+    Then verify a dialog window Add Images appears
+    Then a users drags an image to the window
+    And verify the image is added to a images sections
+    Then a user clicks Add button
+    And verify that a new images is added to Image Component section
+    Then a user selects an image
+    Then click Save button
+    Then click Publish button
+    Then click Close
+    Then verify Published wrap appeared among all other my wraps
+    Then navigate newly edited wrap
+    And click Share button
+    Then verify Share Wrap dialog window appears
+    Then a users clicks Facebook Share button
+    Then close the Share Wrap window
+    Then click Share to share a post on FB
+    Then click Close to close Share Wrap window
+
+  Scenario: Edit a draft of an existing wrap wrap when a user offered to take Quick Tour  but user cancels the option
+    Given edit a draft of an existing wrap wrap and add images
+    When a user navigate to My Wraps page to edit a wrap
+    Then a user select a wrap
+    And clicks on Edit button
+    Then Quick Tour wizard is appeared
+    Then a user clicks X button
+    And verify And verify that Quick Tour help wizard is gone
+    And verify that user lands  back on user’s ‘My Wraps' page
+    When a user clicks Add Images button
+    Then a users drags an image to the window
+    Then a user clicks Add button
+    Then a user selects an image
+    Then click Save button
+    Then click Publish button
+    Then click Close
+    Then navigate newly edited wrap
+    And click Share button
+    Then verify Share Wrap dialog window appears
+    Then a users clicks Facebook Share button
+    Then close the Share Wrap window
+    Then click Share to share a post on FB
+    Then click Close to close Share Wrap window
+
+
